@@ -1,0 +1,17 @@
+﻿  Lab5OpenMP.cpp
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(20,11): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(237,34): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(238,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(265,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(266,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(305,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(338,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(339,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(351,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(363,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(388,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(389,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(405,33): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(406,31): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab5OpenMP2\Lab5OpenMP.cpp(417,33): warning C4018: <: несоответствие типов со знаком и без знака
+  Lab5OpenMP2.vcxproj -> C:\Users\sabri\source\repos\Lab5OpenMP2\Debug\Lab5OpenMP2.exe

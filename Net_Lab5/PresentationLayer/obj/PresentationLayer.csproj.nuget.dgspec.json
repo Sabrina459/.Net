@@ -1,0 +1,143 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\PresentationLayer\\PresentationLayer.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\BusinessLogic\\BusinessLogic.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\BusinessLogic\\BusinessLogic.csproj",
+        "projectName": "BusinessLogic",
+        "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\BusinessLogic\\BusinessLogic.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj",
+        "projectName": "DataBase",
+        "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\PresentationLayer\\PresentationLayer.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\PresentationLayer\\PresentationLayer.csproj",
+        "projectName": "PresentationLayer",
+        "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\PresentationLayer\\PresentationLayer.csproj",
+        "packagesPath": "C:\\Users\\sabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\PresentationLayer\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\sabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\BusinessLogic\\BusinessLogic.csproj"
+              },
+              "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj": {
+                "projectPath": "C:\\Users\\sabri\\source\\repos\\Net_Lab5\\DataBase\\DataBase.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "Microsoft.AspNet.WebApi.HelpPage": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.ApiExplorer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Ninject": {
+              "target": "Package",
+              "version": "[4.0.0-beta-0134, )"
+            },
+            "Ninject.Web.WebApi": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5WebApi", "Lab5WebApi\Lab5WebApi.csproj", "{EF9017E4-EC50-4D76-A3FB-350D012CFD86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{50785476-F4A8-432B-A76D-F6B34F13C322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{76E19E62-7D0D-48D4-909F-9D2B13BAF48B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF9017E4-EC50-4D76-A3FB-350D012CFD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9017E4-EC50-4D76-A3FB-350D012CFD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9017E4-EC50-4D76-A3FB-350D012CFD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9017E4-EC50-4D76-A3FB-350D012CFD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50785476-F4A8-432B-A76D-F6B34F13C322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50785476-F4A8-432B-A76D-F6B34F13C322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50785476-F4A8-432B-A76D-F6B34F13C322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50785476-F4A8-432B-A76D-F6B34F13C322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E19E62-7D0D-48D4-909F-9D2B13BAF48B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E19E62-7D0D-48D4-909F-9D2B13BAF48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E19E62-7D0D-48D4-909F-9D2B13BAF48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E19E62-7D0D-48D4-909F-9D2B13BAF48B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

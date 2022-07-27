@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.EntityFrameworkCore.AutoHistory</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.EntityFrameworkCore.AutoHistory">
+            <summary>
+            Represents the entity change history.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.Id">
+            <summary>
+            Gets or sets the primary key.
+            </summary>
+            <value>The id.</value>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.RowId">
+            <summary>
+            Gets or sets the source row id.
+            </summary>
+            <value>The source row id.</value>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.TableName">
+            <summary>
+            Gets or sets the name of the table.
+            </summary>
+            <value>The name of the table.</value>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.Changed">
+            <summary>
+            Gets or sets the json about the changing.
+            </summary>
+            <value>The json about the changing.</value>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.Kind">
+            <summary>
+            Gets or sets the change kind.
+            </summary>
+            <value>The change kind.</value>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.AutoHistory.Created">
+            <summary>
+            Gets or sets the create time.
+            </summary>
+            <value>The create time.</value>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.AutoHistoryTestHandle">
+            <summary>
+            This class exists so we can reference AutoHistory in the test project. The class name collides with the namespace there.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions">
+            <summary>
+            This class provides options for setting up auto history.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.Instance">
+            <summary>
+            The shared instance of the AutoHistoryOptions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.#ctor">
+            <summary>
+            Prevent constructor from being called eternally.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.ChangedMaxLength">
+            <summary>
+            The maximum length of the 'Changed' column. <c>null</c> will use default setting 2048 unless ChangedVarcharMax is true
+            in which case the column will be varchar(max). Default: null.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.LimitChangedLength">
+            <summary>
+            Set this to true to enforce ChangedMaxLength. If this is false, ChangedMaxLength will be ignored.
+            Default: true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.RowIdMaxLength">
+            <summary>
+            The max length for the row id column. Default: 50.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.TableMaxLength">
+            <summary>
+            The max length for the table column. Default: 128.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.JsonSerializerSettings">
+            <summary>
+            The JsonSerializerSettings for the changed column.
+            </summary>
+        </member>
+        <member name="P:Microsoft.EntityFrameworkCore.Internal.AutoHistoryOptions.JsonSerializer">
+            <summary>
+            The json serializer to use when writing changes. Created internally.
+            </summary>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.DbContextExtensions">
+            <summary>
+            Represents a plugin for Microsoft.EntityFrameworkCore to support automatically recording data changes history.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureAutoHistory(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Ensures the automatic history.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:Microsoft.EntityFrameworkCore.ModelBuilderExtensions">
+            <summary>
+            Represents a plugin for Microsoft.EntityFrameworkCore to support automatically recording data changes history.
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.ModelBuilderExtensions.EnableAutoHistory(Microsoft.EntityFrameworkCore.ModelBuilder,System.Nullable{System.Int32})">
+            <summary>
+            Enables the automatic recording change history.
+            </summary>
+            <param name="modelBuilder">The <see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder"/> to enable auto history feature.</param>
+            <param name="changedMaxLength">The maximum length of the 'Changed' column. <c>null</c> will use default setting 2048.</param>
+            <returns>The <see cref="T:Microsoft.EntityFrameworkCore.ModelBuilder"/> had enabled auto history feature.</returns>
+        </member>
+    </members>
+</doc>

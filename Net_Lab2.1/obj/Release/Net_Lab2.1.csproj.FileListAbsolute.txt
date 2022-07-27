@@ -1,0 +1,5 @@
+C:\Users\sabri\source\repos\Net_Lab2.1\bin\Release\Net_Lab2.1.dll
+C:\Users\sabri\source\repos\Net_Lab2.1\bin\Release\Net_Lab2.1.pdb
+C:\Users\sabri\source\repos\Net_Lab2.1\obj\Release\Net_Lab2.1.csproj.CoreCompileInputs.cache
+C:\Users\sabri\source\repos\Net_Lab2.1\obj\Release\Net_Lab2.1.dll
+C:\Users\sabri\source\repos\Net_Lab2.1\obj\Release\Net_Lab2.1.pdb

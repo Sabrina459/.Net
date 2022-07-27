@@ -1,0 +1,12 @@
+﻿  Lab4WinApi.cpp
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(33,51): error C2660: CreateThread: функция не принимает 5 аргументов
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\processthreadsapi.h(170,1): message : см. объявление "CreateThread"
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(215,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(250,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(276,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(277,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(285,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(293,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(310,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(311,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab4WinApi\Lab4WinApi.cpp(324,23): warning C4018: <: несоответствие типов со знаком и без знака

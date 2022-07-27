@@ -1,0 +1,12 @@
+C:\Users\sabri\source\repos\Lab5WebApi\Database\bin\Debug\net5.0\Database.deps.json
+C:\Users\sabri\source\repos\Lab5WebApi\Database\bin\Debug\net5.0\Database.dll
+C:\Users\sabri\source\repos\Lab5WebApi\Database\bin\Debug\net5.0\ref\Database.dll
+C:\Users\sabri\source\repos\Lab5WebApi\Database\bin\Debug\net5.0\Database.pdb
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.csproj.AssemblyReference.cache
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.AssemblyInfoInputs.cache
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.AssemblyInfo.cs
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.csproj.CoreCompileInputs.cache
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.dll
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\ref\Database.dll
+C:\Users\sabri\source\repos\Lab5WebApi\Database\obj\Debug\net5.0\Database.pdb

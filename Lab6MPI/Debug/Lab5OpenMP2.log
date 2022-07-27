@@ -1,0 +1,23 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (Lab5OpenMP2.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Lab5OpenMP.cpp
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(19,11): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(198,30): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(199,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(221,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(222,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(254,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(283,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(284,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(294,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(304,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(325,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(326,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(340,29): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(341,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\sabri\source\repos\Lab6MPI\Lab5OpenMP.cpp(350,29): warning C4018: <: несоответствие типов со знаком и без знака
+Lab5OpenMP.obj : error LNK2019: ссылка на неразрешенный внешний символ _MPI_Comm_size@8 в функции _main.
+Lab5OpenMP.obj : error LNK2019: ссылка на неразрешенный внешний символ _MPI_Comm_rank@8 в функции _main.
+Lab5OpenMP.obj : error LNK2019: ссылка на неразрешенный внешний символ _MPI_Init@8 в функции _main.
+Lab5OpenMP.obj : error LNK2019: ссылка на неразрешенный внешний символ _MPI_Finalize@0 в функции _main.
+C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64\msmpi.lib : warning LNK4272: тип компьютера библиотеки "x64" конфликтует с типом целевого компьютера "x86"
+C:\Users\sabri\source\repos\Lab6MPI\Debug\Lab6MPI.exe : fatal error LNK1120: неразрешенных внешних элементов: 4

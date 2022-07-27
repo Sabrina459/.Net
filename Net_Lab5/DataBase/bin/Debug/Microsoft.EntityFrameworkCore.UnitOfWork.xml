@@ -1,0 +1,1006 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.EntityFrameworkCore.UnitOfWork</name>
+    </assembly>
+    <members>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IEnumerablePagedListExtensions">
+            <summary>
+            Provides some extension methods for <see cref="T:System.Collections.Generic.IEnumerable`1"/> to provide paging capability.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.IEnumerablePagedListExtensions.ToPagedList``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts the specified source to <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> by the specified <paramref name="pageIndex"/> and <paramref name="pageSize"/>.
+            </summary>
+            <typeparam name="T">The type of the source.</typeparam>
+            <param name="source">The source to paging.</param>
+            <param name="pageIndex">The index of the page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="indexFrom">The start index value.</param>
+            <returns>An instance of the inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> interface.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.IEnumerablePagedListExtensions.ToPagedList``2(System.Collections.Generic.IEnumerable{``0},System.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1}},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts the specified source to <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> by the specified <paramref name="converter"/>, <paramref name="pageIndex"/> and <paramref name="pageSize"/>
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <typeparam name="TResult">The type of the result</typeparam>
+            <param name="source">The source to convert.</param>
+            <param name="converter">The converter to change the <typeparamref name="TSource"/> to <typeparamref name="TResult"/>.</param>
+            <param name="pageIndex">The page index.</param>
+            <param name="pageSize">The page size.</param>
+            <param name="indexFrom">The start index value.</param>
+            <returns>An instance of the inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> interface.</returns>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1">
+            <summary>
+            Provides the interface(s) for paged list of any type.
+            </summary>
+            <typeparam name="T">The type for paging.</typeparam>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.IndexFrom">
+            <summary>
+            Gets the index start value.
+            </summary>
+            <value>The index start value.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.PageIndex">
+            <summary>
+            Gets the page index (current).
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.PageSize">
+            <summary>
+            Gets the page size.
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.TotalCount">
+            <summary>
+            Gets the total count of the list of type <typeparamref name="T"/>
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.TotalPages">
+            <summary>
+            Gets the total pages.
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.Items">
+            <summary>
+            Gets the current page items.
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.HasPreviousPage">
+            <summary>
+            Gets the has previous page.
+            </summary>
+            <value>The has previous page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1.HasNextPage">
+            <summary>
+            Gets the has next page.
+            </summary>
+            <value>The has next page.</value>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.IQueryablePageListExtensions.ToPagedListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Converts the specified source to <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> by the specified <paramref name="pageIndex"/> and <paramref name="pageSize"/>.
+            </summary>
+            <typeparam name="T">The type of the source.</typeparam>
+            <param name="source">The source to paging.</param>
+            <param name="pageIndex">The index of the page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <param name="indexFrom">The start index value.</param>
+            <returns>An instance of the inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> interface.</returns>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1">
+            <summary>
+            Represents the default implementation of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> interface.
+            </summary>
+            <typeparam name="T">The type of the data to page</typeparam>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.PageIndex">
+            <summary>
+            Gets or sets the index of the page.
+            </summary>
+            <value>The index of the page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.PageSize">
+            <summary>
+            Gets or sets the size of the page.
+            </summary>
+            <value>The size of the page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.TotalCount">
+            <summary>
+            Gets or sets the total count.
+            </summary>
+            <value>The total count.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.TotalPages">
+            <summary>
+            Gets or sets the total pages.
+            </summary>
+            <value>The total pages.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.IndexFrom">
+            <summary>
+            Gets or sets the index from.
+            </summary>
+            <value>The index from.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.Items">
+            <summary>
+            Gets or sets the items.
+            </summary>
+            <value>The items.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.HasPreviousPage">
+            <summary>
+            Gets the has previous page.
+            </summary>
+            <value>The has previous page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.HasNextPage">
+            <summary>
+            Gets the has next page.
+            </summary>
+            <value>The has next page.</value>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1" /> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="pageIndex">The index of the page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="indexFrom">The index from.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`1" /> class.
+            </summary>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2">
+            <summary>
+            Provides the implementation of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> and converter.
+            </summary>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <typeparam name="TResult">The type of the result.</typeparam>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.PageIndex">
+            <summary>
+            Gets the index of the page.
+            </summary>
+            <value>The index of the page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.PageSize">
+            <summary>
+            Gets the size of the page.
+            </summary>
+            <value>The size of the page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.TotalCount">
+            <summary>
+            Gets the total count.
+            </summary>
+            <value>The total count.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.TotalPages">
+            <summary>
+            Gets the total pages.
+            </summary>
+            <value>The total pages.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.IndexFrom">
+            <summary>
+            Gets the index from.
+            </summary>
+            <value>The index from.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.Items">
+            <summary>
+            Gets the items.
+            </summary>
+            <value>The items.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.HasPreviousPage">
+            <summary>
+            Gets the has previous page.
+            </summary>
+            <value>The has previous page.</value>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.HasNextPage">
+            <summary>
+            Gets the has next page.
+            </summary>
+            <value>The has next page.</value>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.#ctor(System.Collections.Generic.IEnumerable{`0},System.Func{System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`1}},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2" /> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="converter">The converter.</param>
+            <param name="pageIndex">The index of the page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="indexFrom">The index from.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2.#ctor(Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList{`0},System.Func{System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEnumerable{`1}})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList`2" /> class.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="converter">The converter.</param>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList">
+            <summary>
+            Provides some help methods for <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> interface.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList.Empty``1">
+            <summary>
+            Creates an empty of <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/>.
+            </summary>
+            <typeparam name="T">The type for paging </typeparam>
+            <returns>An empty instance of <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/>.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Collections.PagedList.From``2(Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList{``1},System.Func{System.Collections.Generic.IEnumerable{``1},System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Creates a new instance of <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> from source of <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> instance.
+            </summary>
+            <typeparam name="TResult">The type of the result.</typeparam>
+            <typeparam name="TSource">The type of the source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="converter">The converter.</param>
+            <returns>An instance of <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/>.</returns>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1">
+            <summary>
+            Defines the interfaces for generic repository.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.ChangeTable(System.String)">
+            <summary>
+            Changes the table name. This require the tables in the same database.
+            </summary>
+            <param name="table"></param>
+            <remarks>
+            This only been used for supporting multiple tables in the same model. This require the tables in the same database.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetPagedList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetPagedListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetPagedList``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetPagedListAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetFirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method defaults to a read-only, no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>true</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method defaults to a read-only, no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetFirstOrDefault``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method defaults to a read-only, no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>true</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method defaults to a read-only, no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetFirstOrDefaultAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method defaults to a read-only, no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>true</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>Ex: This method defaults to a read-only, no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetFirstOrDefaultAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method defaults to a read-only, no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>true</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>Ex: This method defaults to a read-only, no-tracking query. </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.FromSql(System.String,System.Object[])">
+            <summary>
+            Uses raw SQL queries to fetch the specified <typeparamref name="TEntity" /> data.
+            </summary>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1" /> that contains elements that satisfy the condition specified by raw SQL.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Find(System.Object[])">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <returns>The found entity or null.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.FindAsync(System.Object[])">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous find operation. The task result contains the found entity or null.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.FindAsync(System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous find operation. The task result contains the found entity or null.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.GetAll">
+            <summary>
+            Gets all entities. This method is not recommended
+            </summary>
+            <returns>The <see cref="T:System.Linq.IQueryable`1"/>.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets the count based on a predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Insert(`0)">
+            <summary>
+            Inserts a new entity synchronously.
+            </summary>
+            <param name="entity">The entity to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Insert(`0[])">
+            <summary>
+            Inserts a range of entities synchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Insert(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Inserts a range of entities synchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.InsertAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Inserts a new entity asynchronously.
+            </summary>
+            <param name="entity">The entity to insert.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.InsertAsync(`0[])">
+            <summary>
+            Inserts a range of entities asynchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.InsertAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Inserts a range of entities asynchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Update(`0)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Update(`0[])">
+            <summary>
+            Updates the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Updates the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Delete(System.Object)">
+            <summary>
+            Deletes the entity by the specified primary key.
+            </summary>
+            <param name="id">The primary key value.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Delete(`0)">
+            <summary>
+            Deletes the specified entity.
+            </summary>
+            <param name="entity">The entity to delete.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Delete(`0[])">
+            <summary>
+            Deletes the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Deletes the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.IRepositoryFactory">
+            <summary>
+            Defines the interfaces for <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1"/> interfaces.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IRepositoryFactory.GetRepository``1(System.Boolean)">
+            <summary>
+            Gets the specified repository for the <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="hasCustomRepository"><c>True</c> if providing custom repositry</param>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <returns>An instance of type inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1"/> interface.</returns>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork">
+            <summary>
+            Defines the interface(s) for unit of work.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.ChangeDatabase(System.String)">
+            <summary>
+            Changes the database name. This require the databases in the same machine. NOTE: This only work for MySQL right now.
+            </summary>
+            <param name="database">The database name.</param>
+            <remarks>
+            This only been used for supporting multiple databases in the same model. This require the databases in the same machine.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.GetRepository``1(System.Boolean)">
+            <summary>
+            Gets the specified repository for the <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="hasCustomRepository"><c>True</c> if providing custom repositry</param>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <returns>An instance of type inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1"/> interface.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.SaveChanges(System.Boolean)">
+            <summary>
+            Saves all changes made in this context to the database.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if sayve changes ensure auto record the change history.</param>
+            <returns>The number of state entries written to the database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.SaveChangesAsync(System.Boolean)">
+            <summary>
+            Asynchronously saves all changes made in this unit of work to the database.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if save changes ensure auto record the change history.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous save operation. The task result contains the number of state entities written to database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+            Executes the specified raw SQL command.
+            </summary>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The number of state entities written to database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.FromSql``1(System.String,System.Object[])">
+            <summary>
+            Uses raw SQL queries to fetch the specified <typeparamref name="TEntity"/> data.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1"/> that contains elements that satisfy the condition specified by raw SQL.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork.TrackGraph(System.Object,System.Action{Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntryGraphNode})">
+            <summary>
+            Uses TrakGrap Api to attach disconnected entities
+            </summary>
+            <param name="rootEntity"> Root entity</param>
+            <param name="callback">Delegate to convert Object's State properities to Entities entry state.</param>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork`1">
+            <summary>
+            Defines the interface(s) for generic unit of work.
+            </summary>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork`1.DbContext">
+            <summary>
+            Gets the db context.
+            </summary>
+            <returns>The instance of type <typeparamref name="TContext"/>.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork`1.SaveChangesAsync(System.Boolean,Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork[])">
+            <summary>
+            Saves all changes made in this context to the database with distributed transaction.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if save changes ensure auto record the change history.</param>
+            <param name="unitOfWorks">An optional <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork"/> array.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous save operation. The task result contains the number of state entities written to database.</returns>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.Repository`1">
+            <summary>
+            Represents a default generic repository implements the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1"/> interface.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Repository`1"/> class.
+            </summary>
+            <param name="dbContext">The database context.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.ChangeTable(System.String)">
+            <summary>
+            Changes the table name. This require the tables in the same database.
+            </summary>
+            <param name="table"></param>
+            <remarks>
+            This only been used for supporting multiple tables in the same model. This require the tables in the same database.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetAll">
+            <summary>
+            Gets all entities. This method is not recommended
+            </summary>
+            <returns>The <see cref="T:System.Linq.IQueryable`1"/>.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetPagedList(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetPagedListAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetPagedList``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetPagedListAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Int32,System.Int32,System.Boolean,System.Threading.CancellationToken,System.Boolean)">
+            <summary>
+            Gets the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> based on a predicate, orderby delegate and page information. This method default no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="pageIndex">The index of page.</param>
+            <param name="pageSize">The size of the page.</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="cancellationToken">
+                A <see cref="T:System.Threading.CancellationToken" /> to observe while waiting for the task to complete.
+            </param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetFirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method default no-tracking query.
+            </summary>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetFirstOrDefaultAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetFirstOrDefault``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <summary>
+            Gets the first or default entity based on a predicate, orderby delegate and include delegate. This method default no-tracking query.
+            </summary>
+            <param name="selector">The selector for projection.</param>
+            <param name="predicate">A function to test each element for a condition.</param>
+            <param name="orderBy">A function to order elements.</param>
+            <param name="include">A function to include navigation properties</param>
+            <param name="disableTracking"><c>True</c> to disable changing tracking; otherwise, <c>false</c>. Default to <c>true</c>.</param>
+            <param name="ignoreQueryFilters">Ignore query filters</param>
+            <returns>An <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.Collections.IPagedList`1"/> that contains elements that satisfy the condition specified by <paramref name="predicate"/>.</returns>
+            <remarks>This method default no-tracking query.</remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.GetFirstOrDefaultAsync``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Func{System.Linq.IQueryable{`0},System.Linq.IOrderedQueryable{`0}},System.Func{System.Linq.IQueryable{`0},Microsoft.EntityFrameworkCore.Query.IIncludableQueryable{`0,System.Object}},System.Boolean,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.FromSql(System.String,System.Object[])">
+            <summary>
+            Uses raw SQL queries to fetch the specified <typeparamref name="TEntity" /> data.
+            </summary>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1" /> that contains elements that satisfy the condition specified by raw SQL.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Find(System.Object[])">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <returns>The found entity or null.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.FindAsync(System.Object[])">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1" /> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.FindAsync(System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            Finds an entity with the given primary key values. If found, is attached to the context and returned. If no entity is found, then null is returned.
+            </summary>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous find operation. The task result contains the found entity or null.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Gets the count based on a predicate.
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Insert(`0)">
+            <summary>
+            Inserts a new entity synchronously.
+            </summary>
+            <param name="entity">The entity to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Insert(`0[])">
+            <summary>
+            Inserts a range of entities synchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Insert(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Inserts a range of entities synchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.InsertAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Inserts a new entity asynchronously.
+            </summary>
+            <param name="entity">The entity to insert.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.InsertAsync(`0[])">
+            <summary>
+            Inserts a range of entities asynchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task" /> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.InsertAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Inserts a range of entities asynchronously.
+            </summary>
+            <param name="entities">The entities to insert.</param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that represents the asynchronous insert operation.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Update(`0)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.UpdateAsync(`0)">
+            <summary>
+            Updates the specified entity.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Update(`0[])">
+            <summary>
+            Updates the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Update(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Updates the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Delete(`0)">
+            <summary>
+            Deletes the specified entity.
+            </summary>
+            <param name="entity">The entity to delete.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Delete(System.Object)">
+            <summary>
+            Deletes the entity by the specified primary key.
+            </summary>
+            <param name="id">The primary key value.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Delete(`0[])">
+            <summary>
+            Deletes the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.Repository`1.Delete(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Deletes the specified entities.
+            </summary>
+            <param name="entities">The entities.</param>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1">
+            <summary>
+            Represents the default implementation of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork"/> and <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork`1"/> interface.
+            </summary>
+            <typeparam name="TContext">The type of the db context.</typeparam>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1"/> class.
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="P:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.DbContext">
+            <summary>
+            Gets the db context.
+            </summary>
+            <returns>The instance of type <typeparamref name="TContext"/>.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.ChangeDatabase(System.String)">
+            <summary>
+            Changes the database name. This require the databases in the same machine. NOTE: This only work for MySQL right now.
+            </summary>
+            <param name="database">The database name.</param>
+            <remarks>
+            This only been used for supporting multiple databases in the same model. This require the databases in the same machine.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.GetRepository``1(System.Boolean)">
+            <summary>
+            Gets the specified repository for the <typeparamref name="TEntity"/>.
+            </summary>
+            <param name="hasCustomRepository"><c>True</c> if providing custom repositry</param>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <returns>An instance of type inherited from <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IRepository`1"/> interface.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+            Executes the specified raw SQL command.
+            </summary>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>The number of state entities written to database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.FromSql``1(System.String,System.Object[])">
+            <summary>
+            Uses raw SQL queries to fetch the specified <typeparamref name="TEntity" /> data.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <param name="sql">The raw SQL.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>An <see cref="T:System.Linq.IQueryable`1" /> that contains elements that satisfy the condition specified by raw SQL.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.SaveChanges(System.Boolean)">
+            <summary>
+            Saves all changes made in this context to the database.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if save changes ensure auto record the change history.</param>
+            <returns>The number of state entries written to the database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.SaveChangesAsync(System.Boolean)">
+            <summary>
+            Asynchronously saves all changes made in this unit of work to the database.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if save changes ensure auto record the change history.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous save operation. The task result contains the number of state entities written to database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.SaveChangesAsync(System.Boolean,Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork[])">
+            <summary>
+            Saves all changes made in this context to the database with distributed transaction.
+            </summary>
+            <param name="ensureAutoHistory"><c>True</c> if save changes ensure auto record the change history.</param>
+            <param name="unitOfWorks">An optional <see cref="T:Arch.EntityFrameworkCore.UnitOfWork.IUnitOfWork"/> array.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous save operation. The task result contains the number of state entities written to database.</returns>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWork`1.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">The disposing.</param>
+        </member>
+        <member name="T:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions">
+            <summary>
+            Extension methods for setting up unit of work related services in an <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions.AddUnitOfWork``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the unit of work given context as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TContext">The type of the db context.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add services to.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+            <remarks>
+            This method only support one db context, if been called more than once, will throw exception.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions.AddUnitOfWork``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the unit of work given context as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TContext1">The type of the db context.</typeparam>
+            <typeparam name="TContext2">The type of the db context.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add services to.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+            <remarks>
+            This method only support one db context, if been called more than once, will throw exception.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions.AddUnitOfWork``3(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the unit of work given context as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TContext1">The type of the db context.</typeparam>
+            <typeparam name="TContext2">The type of the db context.</typeparam>
+            <typeparam name="TContext3">The type of the db context.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add services to.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+            <remarks>
+            This method only support one db context, if been called more than once, will throw exception.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions.AddUnitOfWork``4(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the unit of work given context as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TContext1">The type of the db context.</typeparam>
+            <typeparam name="TContext2">The type of the db context.</typeparam>
+            <typeparam name="TContext3">The type of the db context.</typeparam>
+            <typeparam name="TContext4">The type of the db context.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add services to.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+            <remarks>
+            This method only support one db context, if been called more than once, will throw exception.
+            </remarks>
+        </member>
+        <member name="M:Arch.EntityFrameworkCore.UnitOfWork.UnitOfWorkServiceCollectionExtensions.AddCustomRepository``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the custom repository as a service in the <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>.
+            </summary>
+            <typeparam name="TEntity">The type of the entity.</typeparam>
+            <typeparam name="TRepository">The type of the custom repositry.</typeparam>
+            <param name="services">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> to add services to.</param>
+            <returns>The same service collection so that multiple calls can be chained.</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,9 @@
+C:\Users\sabri\source\repos\MyCollection\bin\Debug\netcoreapp3.1\MyCollection.deps.json
+C:\Users\sabri\source\repos\MyCollection\bin\Debug\netcoreapp3.1\MyCollection.dll
+C:\Users\sabri\source\repos\MyCollection\bin\Debug\netcoreapp3.1\MyCollection.pdb
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.AssemblyInfoInputs.cache
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.AssemblyInfo.cs
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.csproj.CoreCompileInputs.cache
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.dll
+C:\Users\sabri\source\repos\MyCollection\obj\Debug\netcoreapp3.1\MyCollection.pdb

@@ -1,1 +1,0 @@
-C:\Users\sabri\source\repos\Lab5OpenMP2\Debug\Lab5OpenMP2.exe
